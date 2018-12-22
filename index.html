@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Kostka</title>
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Chela+One" rel="stylesheet">
+</head>
+<body>
+ <div class="container">
+  <div class="cube">
+   <div class="front">1</div>
+   <div class="back">2</div>
+   <div class="right">3</div>
+   <div class="left">4</div>
+   <div class="top">5</div>
+   <div class="bottom">6</div>
+  </div>
+ </div>
+ <button>Roll Dice</button>
+
+ <script>
+  let wall = document.querySelector(".cube");
+  let bttn = document.querySelector("button");
+  bttn.addEventListener("click", remondis);
+  bttn.addEventListener("click", losowanie);
+
+  function remondis () {
+  let cls = wall.getAttribute("class");
+  console.log(cls);
+  wall.setAttribute("class", "cube");
+  };
+
+  function losowanie () {
+   let rand = Math.floor(Math.random()*6 + 1);
+    console.log(rand);
+   if(rand === 1) {
+    wall.classList.toggle("show-front");
+   }
+   if (rand === 2) {
+    wall.classList.toggle("show-back");
+   } 
+    if (rand === 3) {
+    wall.classList.toggle("show-right");
+   } 
+   if (rand === 4) {
+    wall.classList.toggle("show-left");
+   }
+   if (rand === 5) {
+    wall.classList.toggle("show-top");
+   }
+   if (rand === 6) {
+    wall.classList.toggle("show-bottom");
+   }
+  };
+ </script>
+</body>
+</html>
